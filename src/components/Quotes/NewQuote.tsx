@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axiosApi from "../../axiosApi";
 import { categories } from "../../categories";
+import { useNavigate } from "react-router-dom";
 
 interface Quote {
   id?: string;
@@ -23,6 +24,8 @@ const NewQuote: React.FC<NewQuoteProps> = ({ existingQuote, onUpdate }) => {
   );
   const [text, setText] = useState(existingQuote ? existingQuote.text : "");
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     if (existingQuote) {
       setAuthor(existingQuote.author);
@@ -36,10 +39,11 @@ const NewQuote: React.FC<NewQuoteProps> = ({ existingQuote, onUpdate }) => {
     const quote = { author, category, text };
 
     if (existingQuote) {
-      (await onUpdate) && onUpdate({ ...quote, id: existingQuote.id! });
+      onUpdate && onUpdate({ ...quote, id: existingQuote.id! });
     } else {
       await axiosApi.post("/quotes.json", quote);
       console.log("Quote added successfully");
+      navigate("/");
     }
 
     setAuthor("");
