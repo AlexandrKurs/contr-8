@@ -12,7 +12,7 @@ const App: React.FC = () => {
       <Router>
         <Header />
         <div className="content">
-          <div className="quotes-container">
+          <div className="quoteBlock">
             <Routes>
               {categories.map((category: Category) => (
                 <Route
