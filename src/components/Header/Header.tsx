@@ -10,7 +10,7 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               to="/"
-              className={({isActive}) => (isActive ? "active" : "")}
+              className={({ isActive }) => (isActive ? "active" : "")}
               end
             >
               Quotes
@@ -19,7 +19,7 @@ const Header: React.FC = () => {
           <li>
             <NavLink
               to="/new-quote"
-              className={({isActive}) => (isActive ? "active" : "")}
+              className={({ isActive }) => (isActive ? "active" : "")}
             >
               Submit new quote
             </NavLink>

@@ -1,13 +1,57 @@
 .app-container {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
-  background-color: white;
+  display: flex;
+  flex-direction: column;
+  width: 1200px;
+  height: 100vh;
+  margin: 20px auto;
 }
 
-body {
-  background-color: #f4f4f4;
-  font-family: Arial, sans-serif;
+.content {
+  display: flex;
+  flex: 1;
+}
+
+.sidebar {
+  width: 200px;
+  padding: 10px;
+}
+
+.quotes-container {
+  flex: 1;
+  padding: 10px;
+}
+
+nav a {
+  display: block;
+  padding: 8px;
+  text-decoration: none;
+  color: #333;
+}
+
+nav a.active {
+  font-weight: bold;
+  color: #007bff;
+}
+
+.quotes {
+  display: flex;
+  column-gap: 20px;
+}
+
+.quotesList {
+  margin-top: 10px;
+}
+
+.quotesContainer {
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px 0;
+}
+
+blockquote {
+  margin: 10px 0;
+  padding: 10px;
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
 }
